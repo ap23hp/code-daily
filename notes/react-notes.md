@@ -12,4 +12,7 @@
 ## statements is action and expression produces a value. We can create expression slots with curly brackets ({}). Anything placed in-between curly brackets will be treated as pure JavaScript, instead of a string.
 ## use the multi-line comment syntax (/* */)
 
-## htmlFor, className, JSX is case-sensitive,Our tags must all be lowercase. In JSX, our attributes need to be “camelCase.   data-test-id and aria-label are not camel case-exceptions.
+## htmlFor, className, JSX is case-sensitive,Our tags must all be lowercase. In JSX, our attributes need to be “camelCase.   data-test-id and aria-label are not camel case-exceptions.We can introduce white space in react using   {' '}
+## We write React using JSX and imports because tools like Vite bundle and compile the code into browser-understandable JavaScript.
+
+##  the browser cannot execute ES module imports without type="module", so React never runs.
