@@ -16,3 +16,6 @@
 ## We write React using JSX and imports because tools like Vite bundle and compile the code into browser-understandable JavaScript.
 
 ##  the browser cannot execute ES module imports without type="module", so React never runs.
+## When we pass something between the open and close tags, React will automatically supply that value to us under children.It appears that React chooses to prioritize the children passed in-between the open/close tags
+
+### The <dl> HTML tag is fairly obscure, but a super worthwhile tag!It stands for “Description List”, and it's intended to be used to display key/value pairs. For example, many e-commerce platforms will display product details in this format:
