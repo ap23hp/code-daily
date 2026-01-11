@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  padding: 16px;
+  font-family: 'Wotfard', sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  border-bottom: 3px solid hsl(0deg 0% 25%);
+}
+th[scope="col"] {
+  text-align: right;
+  border-right: 3px solid hsl(0deg 0% 25%);
+  border-bottom: none;
+  padding-right: 8px;
+}
+tr:not(:last-of-type) th[scope="col"],
+tr:not(:last-of-type) td {
+  border-bottom: 1px solid hsl(0deg 0% 50%);
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-semibold-webfont.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-medium-webfont.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-regular-webfont.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+:root {
+  --font-family: 'Wotfard', sans-serif;
+}
+
+h2 {
+  margin: 2rem 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.shopping-cart {
+  --image-width: 150px;
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-row td {
+  padding: 8px 0px;
+}
+.cart-row td:first-of-type {
+  width: var(--image-width);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.product-thumb {
+  width: var(--image-width);
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.actions {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -1,5 +1,5 @@
-export default function RedButton({children}){
+export default function RedButton({children,color,borderColor}){
 return (
-    <button style={{backgroundColor:'red', color:'white'}}>    {children}</button>
+    <button style={{backgroundColor:'white', color:color,borderColor:borderColor}}>    {children}</button>
 )
 }
