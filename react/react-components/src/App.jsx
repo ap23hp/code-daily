@@ -5,6 +5,7 @@ import ContactCard from "./ContactCard";
 import ShoppingCart from "./ShoppingCart";
 import Avatar from "./Avatar";
 import FriendList from "./FriendList";
+
 const cartItems= [
   {
     id: 'hk123',
@@ -133,10 +134,10 @@ function App() {
 
 
             <h1>solving Accessibility issue</h1>
-           <FriendList name="Andrew"/>
-                <FriendList name="nicole"/>
-                     <FriendList name="rulph"/>
-                          <FriendList name="shruti"/>
+           <FriendList name="Andrew" isOnline={false} />
+                <FriendList name="nicole" isOnline={true}/>
+                     <FriendList name="rulph" isOnline={true}/>
+                          <FriendList name="shruti" isOnline={false}  />
     </>
   );
 }
