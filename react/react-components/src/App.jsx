@@ -5,7 +5,7 @@ import ContactCard from "./ContactCard";
 import ShoppingCart from "./ShoppingCart";
 import Avatar from "./Avatar";
 import FriendList from "./FriendList";
-
+import Grid from "./Grid";
 const cartItems= [
   {
     id: 'hk123',
@@ -138,6 +138,15 @@ function App() {
                 <FriendList name="nicole" isOnline={true}/>
                      <FriendList name="rulph" isOnline={true}/>
                           <FriendList name="shruti" isOnline={false}  />
+
+
+
+                          ------------------------------------
+
+                           <Grid
+      numRows={3}
+      numCols={6}
+    />
     </>
   );
 }
