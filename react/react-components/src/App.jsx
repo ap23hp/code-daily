@@ -6,6 +6,7 @@ import ShoppingCart from "./ShoppingCart";
 import Avatar from "./Avatar";
 import FriendList from "./FriendList";
 import Grid from "./Grid";
+import Counter from "./Counter";
 const cartItems= [
   {
     id: 'hk123',
@@ -147,6 +148,10 @@ function App() {
       numRows={3}
       numCols={6}
     />
+
+    -----------------------------
+
+    <Counter />
     </>
   );
 }

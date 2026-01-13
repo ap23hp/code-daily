@@ -15,7 +15,7 @@ export default function Avatar({src,alt}){
          display: 'block',
   width: '100%',
   borderRadius: '1000px',
-  transition: `transform 500ms`,
+  // transition: `transform 500ms`,
    transform: `rotate(-25deg)`,
   transition: `transform 250ms`
       }}
