@@ -7,6 +7,7 @@ import Avatar from "./Avatar";
 import FriendList from "./FriendList";
 import Grid from "./Grid";
 import Counter from "./Counter";
+import Form from "./Form";
 const cartItems= [
   {
     id: 'hk123',
@@ -152,6 +153,8 @@ function App() {
     -----------------------------
 
     <Counter />
+    ............................................................
+    <Form/>
     </>
   );
 }
