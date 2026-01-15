@@ -8,6 +8,11 @@ import FriendList from "./FriendList";
 import Grid from "./Grid";
 import Counter from "./Counter";
 import Form from "./Form";
+import ContactForm from "./ContactForm";
+import SearchForm from "./SearchForm";
+import BigCoin from "./BigCoin";
+import React from 'react';
+import GuestList from "./GuestList";
 const cartItems= [
   {
     id: 'hk123',
@@ -83,6 +88,21 @@ const data = [
 ];
 
 function App() {
+    const [numOfCoins, setNumOfCoins] = React.useState(0);
+    const [guestList,setGuestList]=React.useState([])
+     function addNewGuest(label) {
+    const newGuest = {
+      id: Math.random(),
+      label,
+    };
+
+    const nextGuests = [...guestList, newGuest];
+    setGuestList(nextGuests);
+  }
+   function runSearch(searchTerm) {
+    window.alert(`Searched for: ${searchTerm}`);
+  }
+  
       let instockItems=cartItems.filter((item)=>item.inStock)
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
@@ -155,6 +175,26 @@ function App() {
     <Counter />
     ............................................................
     <Form/>
+    ................................................................................
+    <ContactForm/>
+    ..........................................................
+     <SearchForm runSearch={runSearch} />
+       <main>
+        <BigCoin numOfCoins={numOfCoins} setNumOfCoins={setNumOfCoins}/>
+      </main>
+      <footer>
+        Your coin balance:
+        <strong>{numOfCoins}</strong>
+      </footer>
+      ------------------------------------------------------------------------------------------------
+      <ol>
+        {guestList.map((guest) => (
+          <li key={guest.id}>{guest.label}</li>
+        ))}
+      </ol>
+    
+  <GuestList addNewGuest={addNewGuest} />
+   
     </>
   );
 }
