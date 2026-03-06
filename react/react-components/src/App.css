@@ -1,0 +1,120 @@
+body {
+  padding: 16px;
+  font-family: 'Wotfard', sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  border-bottom: 3px solid hsl(0deg 0% 25%);
+}
+th[scope="col"] {
+  text-align: right;
+  border-right: 3px solid hsl(0deg 0% 25%);
+  border-bottom: none;
+  padding-right: 8px;
+}
+tr:not(:last-of-type) th[scope="col"],
+tr:not(:last-of-type) td {
+  border-bottom: 1px solid hsl(0deg 0% 50%);
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-semibold-webfont.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-medium-webfont.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  src: url('https://sandpack-bundler.vercel.app/fonts/wotfard/wotfard-regular-webfont.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+:root {
+  --font-family: 'Wotfard', sans-serif;
+}
+
+h2 {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.shopping-cart {
+  --image-width: 150px;
+  margin-bottom: 2rem;
+}
+
+.cart-row td {
+  padding: 8px 0px;
+}
+.cart-row td:first-of-type {
+  width: var(--image-width);
+}
+
+.product-thumb {
+  width: var(--image-width);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.green-dot {
+  min-width: 12px;
+  min-height: 12px;
+  background: hsl(133deg 80% 50%);
+  border-radius: 1000px;
+  border: 2px solid white;
+  box-shadow:
+    0px 1px 2px hsl(0deg 0% 0% / 0.2),
+    0px 2px 4px hsl(0deg 0% 0% / 0.1),
+    0px 4px 8px hsl(0deg 0% 0% / 0.05),
+    0px 8px 16px hsl(0deg 0% 0% / 0.05);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: 16px;
+  background: white;
+  border-radius: 0px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.cell {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  border: 1px solid hsl(210deg 12% 70%);
+  border-radius: 4px;
+}
+.cell:hover {
+  background: hsl(210deg 20% 80%);
+}
