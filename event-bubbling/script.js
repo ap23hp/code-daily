@@ -1,7 +1,7 @@
 //Understand how click events travel from child → parent (bubbling).
 const card = document.querySelector(".card");
 const btn = document.querySelector(".btn");
-
+const container= document.querySelector("#container1")
 card.addEventListener("click", function () {
   console.log("Card clicked");
 });
@@ -118,3 +118,16 @@ containerCards.addEventListener("click",function(event){
 // element.addEventListener("click", handler, {
 //   capture: true
 // })
+function randomColor(number){
+return Math.floor(Math.random()*number)
+} 
+
+function bgChnage(){
+  const randomCol= `rgb(${randomColor(255)},${randomColor(255)},${randomColor(255)})`
+  return randomCol
+}
+container.addEventListener("click",function(event){
+
+ event.target.style.backgroundColor= bgChnage()
+  
+})
