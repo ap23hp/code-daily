@@ -43,6 +43,7 @@ function renderPosts() {
   statusContainer.textContent = "";
 }
 
+
 async function main() {
   try {
     await fetchPosts(url);
