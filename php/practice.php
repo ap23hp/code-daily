@@ -51,6 +51,7 @@ function milani_get_current_service(){
 function milani_get_all_services(){
     return [
       'electric-charger' => ['title' => 'EV Charger Installation'],
+      'ev-chargers'=>['title' => 'EV charger'],
     ];
 }
 
