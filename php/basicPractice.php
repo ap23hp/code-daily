@@ -75,3 +75,21 @@ echo $first3;   // → "V6B"
 echo '<br>';
 echo '<br>';
 echo $last3;    // → "1A1"
+
+// Function banao: milani_get_phone($city, $default)
+// → cities array se phone nikalo
+// → agar city nahi mili → $default return karo
+// → $default ka default value ho '000-000-0000'
+// → ?? operator use karo
+
+function milani_get_phone($city,$default= '000-000-0000'){
+    $cities = milani_get_all_cities();
+     return $cities[$city]['phone'] ?? $default;
+
+}
+echo milani_get_phone('vancouver');        // → '547484733'
+echo '<br>';
+echo milani_get_phone('toronto');          // → '000-000-0000'
+echo '<br>';
+echo milani_get_phone('toronto', 'N/A');   // → 'N/A'
+
