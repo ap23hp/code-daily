@@ -144,3 +144,78 @@ add_filter('post_type_link', 'milani_city_permalink', 10, 2);
 // Chota number  → pehle chalta hai
 // Bada number   → baad mein chalta hai
 // Same priority → jo pehle register hua woh pehle
+
+
+// PHP mein — global variable function mein accessible NAHI:
+$site_name = 'Milani';
+
+function milani_get_site_name() {
+    return $site_name;  //  PHP mein kaam nahi karta
+}
+
+$site_name = 'Milani';
+
+function milani_get_site_name() {
+    global $site_name;  // ← "global variable use karna hai"
+    return $site_name;  //  ab kaam karega
+}
+
+echo milani_get_site_name();  // → 'Milani'
+
+//$wp_query`, `$post`, `$wpdb` — yeh sab WordPress ke global variables hain — access karne ke
+//  liye `global` keyword chahiye।
+
+global $wpdb;
+// $wpdb = WordPress Database object
+// Andar se MySQL connection handle karta hai
+$wpdb->get_results()  // multiple rows fetch karo
+$wpdb->get_row()      // ek row fetch karo
+$wpdb->get_var()      // ek value fetch karo
+$wpdb->insert()       // row insert karo
+$wpdb->update()       // row update karo
+$wpdb->delete()       // row delete karo
+
+//"{$wpdb->prefix}posts"
+// → "wp_posts"  ← prefix + table name
+// Kyunki WordPress install karte waqt prefix set hoti hai:
+// Default: wp_
+//"SELECT * FROM {$wpdb->prefix}posts"  // dynamic
+
+//WP_Query vs $wpdb — kab kya use karein:
+
+// WP_Query  → posts fetch karna — 90% cases
+//             automatically handles:
+//             → permissions
+//             → post status
+//             → caching
+//             → hooks
+
+// $wpdb     → complex custom queries — 10% cases
+//             jab WP_Query se nahi ho:
+//             → custom tables
+//             → complex JOINs
+//             → raw performance
+//             → non-post data
+
+
+// ✅ Safe:
+$wpdb->prepare(
+    "SELECT * FROM wp_posts WHERE post_name = %s",
+    $city  // ← automatically escape hoga
+);
+
+// Chahe user kuch bhi type kare — safe rahega
+// %s → string placeholder
+// %d → number placeholder
+// %f → float placeholder
+
+
+//WordPress mein function naming conflicts 
+//common problem hai — isliye hamesha unique prefix use karo
+
+// sanitize_text_field()  // plain text — HTML nahi
+// sanitize_email()       // email format
+// sanitize_url()         // URL format
+// absint()               // positive integer — IDs ke liye
+// sanitize_key()         // lowercase, no spaces — keys ke liye
+// wp_kses_post()         // HTML allow karo — but safe tags only
