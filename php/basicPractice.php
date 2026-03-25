@@ -48,4 +48,30 @@ print_r($names);
 // 5. Pehle 3 characters nikalo — "V6B"
 // 6. Last 3 characters nikalo — "1A1"
 //trim(), strtoupper(), str_replace(), strlen(), substr()
+$postal = "  v6b 1A1  ";
+// Step 1 — trim
+$step1 = trim($postal);
 
+// Step 2 — uppercase
+$step2 = strtoupper($step1);
+
+// Step 3 — space remove
+$step3 = str_replace(' ', '', $step2);
+
+// Step 4 — length check
+$length = strlen($step3);
+echo $length === 6 ? "Valid length" : "Invalid length";
+
+// Step 5 — pehle 3 chars
+$first3 = substr($step3, 0, 3);
+
+// Step 6 — last 3 chars
+$last3 = substr($step3, 3, 3);
+
+echo $step3;    // → "V6B1A1"
+echo '<br>';
+echo '<br>';
+echo $first3;   // → "V6B"
+echo '<br>';
+echo '<br>';
+echo $last3;    // → "1A1"
