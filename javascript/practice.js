@@ -74,3 +74,9 @@ if(acc-curr<0){
 },4) 
 
 console.log(maxNum)
+
+const scores = { math: 90, science: 85, english: 78 };
+// Task: Log each subject and score as "math: 90" using Object.entries + forEach.
+Object.entries(scores).forEach((item, index) => {
+  console.log(item[0] + ':' + item[1]);
+});
