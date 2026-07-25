@@ -13,6 +13,9 @@ import SearchForm from "./SearchForm";
 import BigCoin from "./BigCoin";
 import React from 'react';
 import GuestList from "./GuestList";
+import SharedState from "./practice/SharedState";
+import Board from "./practice/tictactoe/Board";
+
 const cartItems= [
   {
     id: 'hk123',
@@ -90,6 +93,10 @@ const data = [
 function App() {
     const [numOfCoins, setNumOfCoins] = React.useState(0);
     const [guestList,setGuestList]=React.useState([])
+     const [count,setCount]=React.useState(0)
+    function handleClick(){
+setCount(count+1);
+    }
      function addNewGuest(label) {
     const newGuest = {
       id: Math.random(),
@@ -107,6 +114,11 @@ function App() {
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
+<Board/>
+    <p>..........................................................................................................................</p>
+    <SharedState count={count} onClick={handleClick}/>
+    <SharedState  count={count} onClick={handleClick}/>
+    <p> old practice--------------------------------------------------------------------------------------------------------------</p>
       <p>Section One</p>
       <HorizontalRule size={250} />
       <p>Section Two</p>
