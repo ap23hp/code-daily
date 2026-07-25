@@ -3,12 +3,16 @@ import { useState } from "react"
 export default function Board(){
 
     const [value,setValue]=useState(Array(9).fill(null));
+    const[isNext,setisNext]=useState(true)
     function handleClick(i){
         console.log("click")
+            if (value[i]) return
         const newSquares=value.slice()
 
-   newSquares[i]="X"
+  isNext ?  newSquares[i]="X" : newSquares[i]="O" 
+
    setValue(newSquares)
+    setisNext(!isNext) 
     }
   return (
     <>
