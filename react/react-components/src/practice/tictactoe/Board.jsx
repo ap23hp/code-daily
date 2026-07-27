@@ -6,7 +6,7 @@ export default function Board(){
     const[isNext,setisNext]=useState(true)
     function handleClick(i){
         console.log("click")
-            if (value[i]) return
+            if (value[i]|| calculateWinner(value)) return
         const newSquares=value.slice()
 
   isNext ?  newSquares[i]="X" : newSquares[i]="O" 
@@ -14,8 +14,16 @@ export default function Board(){
    setValue(newSquares)
     setisNext(!isNext) 
     }
+    const winner = calculateWinner(value);
+  let status;
+  if (winner) {
+    status = "Winner: " + winner;
+  } else {
+    status = "Next player: " + (isNext ? "X" : "O");
+  }
   return (
     <>
+    <div className="status">{status}</div>
       <div className="board-row">
         {value.slice(0,3).map((item,index)=>{
      
@@ -49,3 +57,28 @@ export default function Board(){
   );
 }
 
+const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+function calculateWinner(value) {
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];  // line ke teeno index nikale, jaise a=0, b=1, c=2
+
+    if (
+      value[a] &&                    // squares[a] null nahi hai (kuch value hai)
+      value[a] === value[b] &&     // pehla aur doosra match kare
+     value[a] === value[c]        // pehla aur teesra match kare
+    ) {
+      return value[a];  // winner mil gaya! "X" ya "O" return karo
+    }
+  }
+  return null;  // poora loop chal gaya, koi winner nahi mila
+}
