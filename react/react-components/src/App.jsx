@@ -15,6 +15,7 @@ import React from 'react';
 import GuestList from "./GuestList";
 import SharedState from "./practice/SharedState";
 import Board from "./practice/tictactoe/Board";
+import ProductRow from "./practice/productinstock/ProductRow";
 
 const cartItems= [
   {
@@ -114,6 +115,8 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
+    <ProductRow/>
+    <h1>.......................hahahhaha</h1>
 <Board/>
     <p>..........................................................................................................................</p>
     <SharedState count={count} onClick={handleClick}/>
