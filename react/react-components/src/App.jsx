@@ -15,7 +15,9 @@ import React from 'react';
 import GuestList from "./GuestList";
 import SharedState from "./practice/SharedState";
 import Board from "./practice/tictactoe/Board";
-import ProductRow from "./practice/productinstock/ProductRow";
+import Bigcounter from "./practice/counter3";
+import Product from "./practice/Product";
+import SearchFilter from "./practice/Searchfilter";
 
 const cartItems= [
   {
@@ -115,7 +117,11 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
-    <ProductRow/>
+    <SearchFilter/>
+    
+    <Bigcounter />
+    <Product name="pen" isOutOfStock={true} />
+   
     <h1>.......................hahahhaha</h1>
 <Board/>
     <p>..........................................................................................................................</p>
