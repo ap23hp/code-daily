@@ -17,8 +17,8 @@ import SharedState from "./practice/SharedState";
 import Board from "./practice/tictactoe/Board";
 import Bigcounter from "./practice/counter3";
 import Product from "./practice/Product";
-import SearchFilter from "./practice/Searchfilter";
-
+import SearchFilter1 from "./practice/Searchfilter1";
+import UserList from "./practice/UserList";
 const cartItems= [
   {
     id: 'hk123',
@@ -117,7 +117,12 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
-    <SearchFilter/>
+<UserList/>
+
+<SearchFilter1/>
+
+
+
     
     <Bigcounter />
     <Product name="pen" isOutOfStock={true} />
