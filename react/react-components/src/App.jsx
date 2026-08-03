@@ -20,6 +20,7 @@ import Product from "./practice/Product";
 import SearchFilter1 from "./practice/Searchfilter1";
 import UserList from "./practice/UserList";
 import DebounceSearch from "./practice/DebounceSearch";
+import Performance from "./practice/performance";
 const cartItems= [
   {
     id: 'hk123',
@@ -118,7 +119,7 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
-
+<Performance/>
     <DebounceSearch/>
 <UserList/>
 
