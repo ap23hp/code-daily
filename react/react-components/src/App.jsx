@@ -22,6 +22,7 @@ import UserList from "./practice/UserList";
 import DebounceSearch from "./practice/DebounceSearch";
 import Performance from "./practice/performance";
 import useLocalStorageCustomHook from "./practice/LocalStorageCustom";
+import DashboardSearch from "./practice/User-directory-search/DashboardSearch";
 const cartItems= [
   {
     id: 'hk123',
@@ -121,6 +122,8 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
+<DashboardSearch/>
+    <p>------------</p>
      <input value={name} onChange={(e) => setName(e.target.value)} />
 <Performance/>
     <DebounceSearch/>
