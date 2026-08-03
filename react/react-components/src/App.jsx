@@ -21,6 +21,7 @@ import SearchFilter1 from "./practice/Searchfilter1";
 import UserList from "./practice/UserList";
 import DebounceSearch from "./practice/DebounceSearch";
 import Performance from "./practice/performance";
+import useLocalStorageCustomHook from "./practice/LocalStorageCustom";
 const cartItems= [
   {
     id: 'hk123',
@@ -99,6 +100,7 @@ function App() {
     const [numOfCoins, setNumOfCoins] = React.useState(0);
     const [guestList,setGuestList]=React.useState([])
      const [count,setCount]=React.useState(0)
+     const [name,setName]=useLocalStorageCustomHook('username',"")
     function handleClick(){
 setCount(count+1);
     }
@@ -119,6 +121,7 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
+     <input value={name} onChange={(e) => setName(e.target.value)} />
 <Performance/>
     <DebounceSearch/>
 <UserList/>
