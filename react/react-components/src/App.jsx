@@ -19,6 +19,7 @@ import Bigcounter from "./practice/counter3";
 import Product from "./practice/Product";
 import SearchFilter1 from "./practice/Searchfilter1";
 import UserList from "./practice/UserList";
+import DebounceSearch from "./practice/DebounceSearch";
 const cartItems= [
   {
     id: 'hk123',
@@ -117,6 +118,8 @@ setCount(count+1);
     let outStockItems=cartItems.filter((item)=>!item.inStock)
   return (
     <>
+
+    <DebounceSearch/>
 <UserList/>
 
 <SearchFilter1/>
